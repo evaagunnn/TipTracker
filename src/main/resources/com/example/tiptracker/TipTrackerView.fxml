@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.tiptracker.controllers.TipController" spacing="10">
+    <TableView fx:id="tipTable">
+        <columns>
+            <TableColumn fx:id="dateColumn" text="Date" prefWidth="100"/>
+            <TableColumn fx:id="amountColumn" text="Amount" prefWidth="100"/>
+            <TableColumn fx:id="notesColumn" text="Notes" prefWidth="200"/>
+        </columns>
+    </TableView>
+    <HBox spacing="10">
+        <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        </padding>
+        <DatePicker fx:id="datePicker" promptText="Date"/>
+        <TextField fx:id="amountField" promptText="Amount"/>
+        <TextArea fx:id="notesField" promptText="Notes" prefHeight="50"/>
+        <Button fx:id="addButton" text="Add Tip" onAction="#addTip"/>
+        <Button fx:id="testButton" text="Change Scene" onAction="#test"/>
+
+    </HBox>
+</VBox>
