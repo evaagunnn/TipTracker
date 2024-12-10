@@ -10,7 +10,7 @@ public class  Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenuView.fxml"));
-        Scene mainScene = new Scene(loader.load());
+        Scene mainScene = new Scene(loader.load(), 800,600);
 
 
         MainMenuController controller = loader.getController();
@@ -18,6 +18,8 @@ public class  Main extends Application {
 
         primaryStage.setScene(mainScene);
         primaryStage.setTitle("Tip Tracker");
+        primaryStage.setFullScreen(true);
+
         primaryStage.show();
     }
 

@@ -2,14 +2,23 @@
 <?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.tiptracker.controllers.GraphTipsController" spacing="10">
-    <BarChart fx:id="tipsChart" title="Tips Visualization" prefWidth="600" prefHeight="400">
-        <xAxis>
-            <CategoryAxis fx:id="xAxis" label="Date"/>
-        </xAxis>
-        <yAxis>
-            <NumberAxis fx:id="yAxis" label="Amount"/>
-        </yAxis>
-    </BarChart>
+    <HBox spacing="10">
+        <DatePicker fx:id="topStartPicker" promptText="Top Range Start"/>
+        <DatePicker fx:id="topEndPicker" promptText="Top Range End"/>
+        <ToggleButton fx:id="topToggleButton" text="Toggle Line/Bar"/>
+        <Button text="Update Top Chart" onAction="#updateTopChart"/>
+    </HBox>
+    <VBox fx:id="topChartContainer" spacing="10"/>
+
+    <HBox spacing="10">
+        <DatePicker fx:id="bottomStartPicker" promptText="Bottom Range Start"/>
+        <DatePicker fx:id="bottomEndPicker" promptText="Bottom Range End"/>
+        <ToggleButton fx:id="bottomToggleButton" text="Toggle Line/Bar"/>
+        <Button text="Update Bottom Chart" onAction="#updateBottomChart"/>
+    </HBox>
+    <VBox fx:id="bottomChartContainer" spacing="10"/>
+
     <Button text="Back to Main Menu" onAction="#goBackToMainMenu"/>
 </VBox>

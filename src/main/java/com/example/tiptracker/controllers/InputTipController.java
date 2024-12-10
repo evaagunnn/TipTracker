@@ -66,7 +66,6 @@ public class InputTipController {
     @FXML
     public void goBackToMainMenu() {
         try {
-            // Load the MainMenuView.fxml and set the controller
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("MainMenuView.fxml"));
             Scene mainMenuScene = new Scene(loader.load());
 

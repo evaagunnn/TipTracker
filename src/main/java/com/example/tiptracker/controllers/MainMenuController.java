@@ -34,9 +34,12 @@ public class MainMenuController {
     public void goToGetTips() {
         try {
             FXMLLoader loader = new FXMLLoader(Main.class.getResource("TipTrackerView.fxml"));
-            Scene tipTrackerScene = new Scene(loader.load());
+            Scene tipScene = new Scene(loader.load());
 
-            stage.setScene(tipTrackerScene);
+            TipController controller = loader.getController();
+            controller.setStage(this.stage);
+
+            this.stage.setScene(tipScene);
         } catch (IOException e) {
             e.printStackTrace();
         }
